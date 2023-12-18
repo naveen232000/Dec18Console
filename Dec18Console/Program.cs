@@ -29,7 +29,9 @@ namespace Dec18Console
         }
         static void Main(string[] args)
         {
-            JaggedarrayFun();
+            //JaggedarrayFun();
+            // SystemArray.ArraylistFun();
+            SystemArray.HastableFun();
             Console.Read();
         }
     }
