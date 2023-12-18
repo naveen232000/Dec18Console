@@ -31,7 +31,10 @@ namespace Dec18Console
         {
             //JaggedarrayFun();
             // SystemArray.ArraylistFun();
-            SystemArray.HastableFun();
+            //SystemArray.HastableFun();
+            //SystemArray.SortFun();
+            //SystemArray.StackQueue();
+            SystemArray.BothIterator();
             Console.Read();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -102,6 +103,98 @@ namespace Dec18Console
             {
                 Console.WriteLine($"{i.Key} : {i.Value}");
             }
+        }
+        public static void SortFun()
+        {
+            SortedList sot = new SortedList();
+            sot.Add(1, "name1");
+            sot.Add(3, "name3");
+            sot.Add(5, "name5");
+            sot.Add(2, "name2");
+            sot.Add(4, "name4");
+           
+             Console.WriteLine("All Keys\n");
+            ICollection sotKey = sot.Keys;
+            foreach (var i in sotKey)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("\nAll Values\n");
+            ICollection sotVal = sot.Values;
+            foreach (var i in sotVal)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine("\nkey : value\n");
+            foreach (DictionaryEntry i in sot)
+            {
+                Console.WriteLine($"{i.Key} : {i.Value}");
+            }
+            bool b1 =sot.Contains(4);
+            bool b2 =sot.ContainsKey(5);
+            bool b3 =sot.ContainsValue("name1");
+            int s1 = sot.Capacity;
+            int s2=sot.Count;
+
+            Console.WriteLine($"\nsot.ContainsKey(5) = {b2}\nsot.ContainsValue(\"name1\") = {b3}\nsot.Contains(4) = {b1}\nsot.Count = {s2}\nsot.Capacity ={s1}");
+
+        }
+        public static void StackQueue()
+        {
+            Stack stk = new Stack();
+            stk.Push(100);
+            stk.Push(25);
+            stk.Push(35);
+            stk.Push(400);
+            Console.WriteLine("Stack:");
+            foreach (var i in stk)
+            {
+                Console.WriteLine(i);
+            }
+            object obj1=stk.Pop();
+            Console.WriteLine("Pop() : "+obj1);
+           
+            object obj2=stk.Peek();
+            Console.WriteLine("Peek() : " + obj2);
+
+            Queue queue = new Queue();
+            queue.Enqueue(12);
+            queue.Enqueue(13);
+            queue.Enqueue(14);
+            queue.Enqueue(15);
+            Console.WriteLine("\nQueue:");
+            foreach(var i in queue)
+            {
+                Console.WriteLine(i);
+            }
+            Object obj3 = queue.Dequeue();
+            Console.WriteLine("Dequeue() : " + obj3);
+            object obj4 = queue.Peek();
+            Console.WriteLine("Peek() : " + obj4);
+
+
+        }
+        public static void BothIterator()
+        {
+            List<int> list = new List<int>();
+            list.Add(100);
+            list.Add(25);
+            list.Add(34);
+
+            IEnumerable<int> enumerable = list;
+            Console.WriteLine("IEnumerable : ");
+            foreach (var i in enumerable)
+            {
+                Console.WriteLine(i);
+            }
+            IEnumerator<int> enumerator = enumerable.GetEnumerator();
+            Console.WriteLine("IEnumerator : ");
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current.ToString());
+            }
+
         }
     }
 
